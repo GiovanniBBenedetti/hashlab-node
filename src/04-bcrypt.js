@@ -10,6 +10,12 @@ async function main() {
     console.log("hash 2:", hash2);
    //Mesma senha, hashes diferentes: o bcrypt sorteia um salt novo a cada vez
 
+
+  console.log("=== verificando senhas ===\n");
+  const certa = await bcrypt.compare("123456", hash1);
+  const errada = await bcrypt.compare("senhaErrada", hash1);
+  console.log("senha '123456'     confere?", certa);
+  console.log("senha 'senhaErrada' confere?", errada);
 }
 
 
