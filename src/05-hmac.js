@@ -28,3 +28,12 @@ console.log("assinatura calculada:", assinaturaCalculada);
 console.log("mensagem autentica?", valida, "\n");
 
 
+console.log("=== 3) ALGUEM ADULTEROU a mensagem no caminho ===\n");
+// o atacante troca 100 por 9000, mas nao tem a chave para refazer a assinatura
+const mensagemAdulterada = "transferir 9000 reais para ana";
+const recalculada = assinar(mensagemAdulterada, CHAVE);
+
+console.log("mensagem que chegou:", mensagemAdulterada);
+console.log("assinatura original: ", assinaturaRecebida);
+console.log("assinatura da adulterada:", recalculada);
+console.log("batem?", assinaturaRecebida === recalculada, "-> REJEITADA, foi alterada!");
