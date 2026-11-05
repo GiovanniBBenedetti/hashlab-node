@@ -14,4 +14,17 @@ console.log("com a chave certa: ", assinar(msg, CHAVE));
 console.log("com chave errada:  ", assinar(msg, "outra-chave"));
 console.log("-> So quem tem a chave gera a assinatura correta.\n");
 
+console.log("=== 2) VERIFICANDO uma mensagem recebida ===\n");
+// imagine que o remetente mandou a mensagem + a assinatura dele
+const mensagemRecebida = "transferir 100 reais para ana";
+const assinaturaRecebida = assinar(msg, CHAVE); // (o remetente gerou com a chave)
+
+// o receptor recalcula a assinatura com a MESMA chave e compara
+const assinaturaCalculada = assinar(mensagemRecebida, CHAVE);
+const valida = assinaturaRecebida === assinaturaCalculada;
+
+console.log("assinatura recebida: ", assinaturaRecebida);
+console.log("assinatura calculada:", assinaturaCalculada);
+console.log("mensagem autentica?", valida, "\n");
+
 
