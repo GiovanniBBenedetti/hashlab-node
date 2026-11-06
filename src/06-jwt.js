@@ -7,4 +7,8 @@ const token = jwt.sign(
     {expiresIn: "1h"}
 )
 
+//Token Gerado
 console.log(token)
+
+//Decodificar informacoes do token'
+console.log(jwt.decode(token))
