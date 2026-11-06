@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/GiovanniBBenedetti/hashlab-node#readme",
   "dependencies": {
-    "bcrypt": "^6.0.0"
+    "bcrypt": "^6.0.0",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^9.0.3",
+    "npm": "^12.2.2"
   }
 }
