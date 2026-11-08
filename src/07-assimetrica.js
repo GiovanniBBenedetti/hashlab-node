@@ -10,3 +10,7 @@ const mensagem = "transferir 100 reais para ana";
 // assina com a PRIVADA
 const assinatura = crypto.sign("sha256", Buffer.from(mensagem), privateKey);
 console.log("assinatura:", assinatura.toString("hex").slice(0, 40) + "...");
+
+// verifica com a PUBLICA
+const valida = crypto.verify("sha256", Buffer.from(mensagem), publicKey, assinatura);
+console.log("assinatura valida?", valida);
